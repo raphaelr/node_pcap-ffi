@@ -1,0 +1,10 @@
+{
+	"name": "pcap-ffi,
+	"version": "0.1.0",
+	"author": "Raphael Robatsch <raphaelr@f-m.fm>",
+	"description": "FFI bindings for libpcap",
+	"main": "./lib/pcap-ffi",
+	"keywords": ["binding", "library"],
+	"dependencies": { "node-ffi" => "~0.5" },
+	"devDependencies": { }
+}
