@@ -21,6 +21,7 @@
 	},
 	
 	"scripts": {
-		"test": "node ./node_modules/mocha/bin/_mocha"
+		"test": "node ./node_modules/mocha/bin/_mocha",
+		"doc": "node ./script/doc"
 	}
 }
