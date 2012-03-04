@@ -13,7 +13,7 @@ Requirements
 ============
 * [libpcap](http://www.tcpdump.org) (obviously), or [WinPcap](https://winpcap.org/) if using Windows
 * [node.js](http://nodejs.org) (obviously)
-* The dependencies listed in the [package.json](package.json).
+* The dependencies listed in [package.json](https://github.com/raphaelr/node_pcap-ffi/blob/master/package.json).
 
 License
 =======
