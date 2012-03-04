@@ -33,13 +33,16 @@ function parseInputFiles() {
 	glob('doc/input/**/*.{md,markdown}', {}, function(err, matches) {
 		if(err) throw err;
 		_.each(matches, function(match) {
-			fs.readFile(match, 'utf8', function(err, data) {
-				if(err) throw err;
-				data = showdown(data);
-				var title = data.match(/<h1(?:.*?)>(.*?)<\/h1>/)[1];
-				data = jqtpl.tmpl('doc', { content: data, title: title });
-				var outfile = match.replace(/^doc\/input\/(.*)\.(md|markdown)$/, 'doc/output/$1.html');
-				fs.writeFile(outfile, data, 'utf8');
+			var basename = match.match(/^doc\/input\/(.*)\.(md|markdown)$/)[1].replace(/\//g, '.');
+			var outfile = 'doc/output/' + basename + '.html';
+			transform(match, outfile, function(inpath, outpath) {
+				fs.readFile(match, 'utf8', function(err, data) {
+					if(err) throw err;
+					data = showdown(data);
+					var title = data.match(/<h1(?:.*?)>(.*?)<\/h1>/)[1];
+					data = jqtpl.tmpl('doc', { content: data, title: title });
+					fs.writeFile(outpath, data, 'utf8');
+				});
 			});
 		});
 	});
@@ -51,14 +54,20 @@ function copyDataFiles() {
 		_.each(matches, function(match) {
 			if(match === 'doc/data/template.html') return;
 			var outfile = match.replace(/^doc\/data\/(.*)$/, 'doc/output/$1');
-			fs.stat(match, function(err, stat) {
-				if(err) throw err;
-				if(stat.isDirectory()) {
-					fs.mkdir(outfile);
-				} else {
-					util.pump(fs.createReadStream(match), fs.createWriteStream(outfile));
-				}
+			transform(match, outfile, function(inpath, outpath) {
+				util.pump(fs.createReadStream(inpath), fs.createWriteStream(outpath));
 			});
 		});
+	});
+}
+
+function transform(inpath, outpath, copyfn) {
+	fs.stat(inpath, function(err, stat) {
+		if(err) throw err;
+		if(stat.isDirectory()) {
+			fs.mkdir(outpath);
+		} else {
+			copyfn(inpath, outpath);
+		}
 	});
 }
