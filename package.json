@@ -1,12 +1,21 @@
 {
-	"name": "pcap-ffi,
+	"name": "pcap-ffi",
 	"version": "0.1.0",
 	"author": "Raphael Robatsch <raphaelr@f-m.fm>",
 	"description": "FFI bindings for libpcap",
 	"main": "./lib/pcap-ffi",
 	"keywords": ["binding", "library"],
+	
 	"dependencies": {
-		"node-ffi" => "~0.5"
+		"node-ffi": "~0.5"
 	},
-	"devDependencies": { }
+	
+	"devDependencies": {
+		"expect.js": "~0.1",
+		"mocha": "~0.14"
+	},
+	
+	"scripts": {
+		"test": "node ./node_modules/mocha/bin/_mocha"
+	}
 }
