@@ -4,8 +4,8 @@ var _ = require('underscore'),
     showdown = (new (require('showdown').Showdown.converter)).makeHtml,
     jqtpl = require('jqtpl'),
     path = require('path'),
-	rimraf = require('rimraf'),
-	util = require('util');
+    rimraf = require('rimraf'),
+    util = require('util');
 
 var docdir = path.join(__dirname, '..', 'doc'),
     inputdir = path.join(docdir, 'input'),
@@ -20,11 +20,6 @@ rimraf(outputdir, function(err) {
 		copyDataFiles();
 	});
 });
-
-function continueWithTemplateLoading() {
-	parseInputFiles();
-	copyDataFiles();
-}
 
 function parseInputFiles() {
 	var template_html = fs.readFileSync(path.join(datadir, 'template.html'), 'utf8')
