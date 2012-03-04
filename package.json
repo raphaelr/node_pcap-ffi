@@ -5,6 +5,8 @@
 	"description": "FFI bindings for libpcap",
 	"main": "./lib/pcap-ffi",
 	"keywords": ["binding", "library"],
-	"dependencies": { "node-ffi" => "~0.5" },
+	"dependencies": {
+		"node-ffi" => "~0.5"
+	},
 	"devDependencies": { }
 }
