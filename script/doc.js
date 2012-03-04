@@ -51,7 +51,14 @@ function copyDataFiles() {
 		_.each(matches, function(match) {
 			if(match === 'doc/data/template.html') return;
 			var outfile = match.replace(/^doc\/data\/(.*)$/, 'doc/output/$1');
-			util.pump(fs.createReadStream(match), fs.createWriteStream(outfile));
+			fs.stat(match, function(err, stat) {
+				if(err) throw err;
+				if(stat.isDirectory()) {
+					fs.mkdir(outfile);
+				} else {
+					util.pump(fs.createReadStream(match), fs.createWriteStream(outfile));
+				}
+			});
 		});
 	});
 }

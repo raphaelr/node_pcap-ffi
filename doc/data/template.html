@@ -3,9 +3,13 @@
 	<head>
 		<title>pcap-ffi: ${title}</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="documentation.css">
+		<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection">
+		<link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print"> 
+		<!--[if lt IE 8]> <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"> <![endif]-->
 	</head>
 	<body>
-		{{html content}}
+		<div id="container">
+			<article class="span-24">{{html content}}</article>
+		</div>
 	</body>
 </html>
