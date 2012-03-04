@@ -1,19 +1,11 @@
-pcap-ffi
-========
-FFI bindings for libpcap
-------------------------
+Documentation Index
+===================
 
 pcap-ffi provides a binding to [libpcap](http://www.tcpdump.org/) for node.js. Unlike
 [node_pcap](https://github.com/mranney/node_pcap) it is written in pure JavaScript,
 it relies on [node-ffi](https://github.com/rbranson/node-ffi) to call into libpcap.
 It is therefore able to support all operating systems which support node-ffi and libpcap,
 without having to manually recompile for every release, system and architecture.
-
-Requirements
-============
-* [libpcap](http://www.tcpdump.org) (obviously), or [WinPcap](https://winpcap.org/) if using Windows
-* [node.js](http://nodejs.org) (obviously)
-* The dependencies listed in the [package.json](package.json).
 
 License
 =======
