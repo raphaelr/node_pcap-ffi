@@ -1,0 +1,35 @@
+body {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+header {
+	font-size: 1.5em;
+	border-bottom: 1px solid #ddd;
+}
+
+nav {
+	padding-top: 0.5em;
+	font-size: 1.25em;
+}
+
+nav li {
+	margin-top: 1em;
+}
+
+nav > ul:first-child {
+	margin-top: -1em;
+}
+
+nav > ul > li > ul {
+	list-style-type: square;
+}
+
+nav > ul > li > ul > li > ul {
+	list-style-type: circle;
+}
+
+footer {
+	border-top: 1px solid #ddd;
+	text-align: center;
+}

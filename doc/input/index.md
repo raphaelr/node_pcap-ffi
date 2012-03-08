@@ -1,5 +1,5 @@
-Documentation Index
-===================
+pcap-ffi
+========
 
 pcap-ffi provides a binding to [libpcap](http://www.tcpdump.org/) for node.js. Unlike node_pcap
 it is written in pure JavaScript, it relies on [node-ffi](https://github.com/rbranson/node-ffi)

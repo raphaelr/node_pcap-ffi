@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>pcap-ffi: ${title}</title>
 		<meta charset="utf-8">
+		<title>${title}</title>
 		<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection">
 		<link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print"> 
-		<!--[if lt IE 8]> <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"> <![endif]-->
+		<!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+		<link rel="stylesheet" href="css/site.css" type="text/css">
 	</head>
 	<body>
-		<div id="container">
-			<article class="span-24">{{html content}}</article>
+		<div class="container">
+			<header class="span-24"><h1>pcap-ffi</h1></header>
+			<nav class="span-6 border">{{html navigation}}</nav>
+			<article class="span-18 last">{{html content}}</article>
+			<footer class="span-24">pcap-ffi (c) 2012 Raphael Robatsch</footer>
 		</div>
 	</body>
 </html>
