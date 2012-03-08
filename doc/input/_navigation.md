@@ -1,2 +1,5 @@
 * [pcap-ffi](index.html)
-* [Coding Style](coding-style.html)
+* [API](api.index.html)
+    * [Opening and closing](api.open-close.html)
+* Development
+    * [Coding Style](dev.coding-style.html)
