@@ -20,6 +20,13 @@ Opens a live capture from a physical network interface.
   as much packets as it can store in it's buffer before returning.  
   Default: `0`
 
+## pcap.openOffline
+    var handle = pcap.openOffline(filename);
+
+Opens a capture file which was previously recorded.
+
+* `filename`: Filename of the capture file.
+
 ## pcap.openDead
     var handle = pcap.openDead([linktype], [snaplen]);
 

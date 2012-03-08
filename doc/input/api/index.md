@@ -1,6 +1,6 @@
 API Reference
 =============
-This section details the public facing API of `pcap-ffi`. The following convetions
+This section details the public facing API of `pcap-ffi`. The following conventions
 are used throughout this section:
 
 * `pcap` is the result of `require('pcap-ffi')`.
