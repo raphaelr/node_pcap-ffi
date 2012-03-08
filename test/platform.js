@@ -1,5 +1,5 @@
-var expect = require('expect.js');
-var pcap = require('../');
+var expect = require('expect.js'),
+    pcap = require('../');
 
 describe('platform', function() {
 	it('should have a string property "PCAP_LIBRARY"', function() {
