@@ -14,14 +14,11 @@
 	"devDependencies": {
 		"expect.js": "~0.1",
 		"mocha": "~0.14",
-		"glob": "~3.1",
-		"jqtpl": "~1.0",
-		"rimraf": "~2.0",
-		"showdown": "~0.0"
+		"nanodoc": "~0.3"
 	},
 	
 	"scripts": {
 		"test": "node ./node_modules/mocha/bin/_mocha",
-		"doc": "node ./script/doc"
+		"doc": "node ./node_modules/nanodoc/cli.js"
 	}
 }
